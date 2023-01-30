@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(187, 238, 247);
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        p{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            background-color: yellow;
+            font-size: 20px;
+            line-height: 35px;
+        }
+        .container{
+            width: 400px;
+            height: 265px;
+            border: 2px dotted red;
+            margin: 80px auto;
+            padding: 5px;
+        }
+        #btn{
+            width: 100px;
+            height: 50px;
+            background-color: pink;
+            margin: 80px 650px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <p id="MyText">JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries.</p>
+    
+</div>
+<button id="btn" >Click Me</button>
+    <script>
+        document.getElementsByTagName('button')[0].addEventListener('click', function(){
+            let find = prompt('*Enter Name Find*')
+            let replace = prompt('*Enter Name Replace*')
+            let str = document.getElementById('MyText').innerText
+
+           
+            str = str.replace(new RegExp(find, "g"), replace);
+
+            document.getElementById('MyText').innerText=str
+
+
+        })
+        
+    </script>
+</body>
+</html>

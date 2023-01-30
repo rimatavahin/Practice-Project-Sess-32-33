@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+    <style>
+        body {
+            background-color: rgb(185, 240, 250);
+        }
+
+        #txt {
+            color: orangered;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 40px;
+        }
+
+        #demo {
+            background-color: rgba(255, 255, 0, 0.342);
+            font-size: 20px;
+            color: black;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Today is : <span id="txt"></span></h2>
+    <br>
+    <p id="demo"></p>
+    <button type="button" onclick="document.getElementById('demo').innerHTML=Date()">Click me to display Date and
+        Time</button>
+
+    <script>
+
+        var MyDate = new Date();
+        switch (MyDate.getDay()) {
+
+
+
+            case 0:
+                document.getElementById("txt").innerHTML = "It's Sunday, time to relax!";
+                break;
+
+            case 1:
+                document.getElementById("txt").innerHTML = "Happy Monday! ";
+                break;
+
+            case 2:
+                document.getElementById("txt").innerHTML = "It's Tuesday. You got this!";
+                break;
+
+            case 3:
+                document.getElementById("txt").innerHTML = "Just one more day until the weekend! It's Wednesday ";
+                break;
+
+            case 4:
+                document.getElementById("txt").innerHTML = "Thursday";
+                break;
+
+            case 5:
+                document.getElementById("txt").innerHTML = "Happy Friday!";
+                break;
+
+            case 6:
+                document.getElementById("txt").innerHTML = "Have a wonderful Saturday!";
+                break;
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

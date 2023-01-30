@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 20px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Please enter a number between 10 and 50</p>
+    <input id="num">
+    <input type="submit" value="Submit" onclick="validateForm()">
+    <p id="demo"></p>
+
+    <script>
+        function validateForm() {
+            let x, txt;
+            x = document.getElementById("num").value;
+            if (x < 10 || x > 50) {
+                txt = "Incorrect number";
+            }
+            // if (x == "") {
+            //     alert("Name must be filled out");
+            // }
+            else {
+                txt = "Number is correct";
+            }
+            document.getElementById('demo').innerHTML = txt;
+        }
+    </script>
+</body>
+
+</html>

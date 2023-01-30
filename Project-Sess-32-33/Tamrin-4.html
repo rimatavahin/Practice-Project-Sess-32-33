@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: rgb(199, 248, 199);
+        }
+
+        #btn{
+            width: 100px;
+            height: 50px;
+            background-color: pink;
+            margin-left: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn" onclick="myFunction()">click</button>
+
+    <p id="demo">Please visit Javascript and Javascript !</p>
+
+    <script>
+        function myFunction() {
+            let str = document.getElementById("demo").innerHTML;
+            let txt = str.replace("Javascript", "Bootstrapt");
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+    </script>
+</body>
+
+</html>

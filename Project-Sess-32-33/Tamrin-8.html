@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <form onsubmit="return Myform()" name="form" action="" class="form m-3 p-1 border form-group">
+                <input type="text" name="user" placeholder="username"> <br>
+                <span id="fullname"></span><br>
+                <input type="password" name="password" placeholder="password" ><br>
+                <span id="pass"></span><br>
+                <button>send</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function Myform(){
+            let flag = 0
+            let fname = document.forms['form']['user'].value
+
+            if(
+                fname == null ||
+                fname == '' ||
+                (fname.search(/<script/i)) >= 0 ||
+                (fname.search(/\s/)) == 0
+            ){
+                document.getElementById('fullname').innerHTML='Your fullName is inccorect!'
+                document.getElementById('fullname').style.color='red'
+
+                flag++
+            }else{
+                if(
+                    ((fname.search(/[0-9]/)) == 0) ||
+                    ((fname.search(/[@%&!$=]/))>=0)
+                ){
+                    document.getElementById('fullname').innerHTML='Your fullName is inccorect!'
+                    document.getElementById('fullname').style.color='red'
+                    flag++
+                }else{
+                    document.getElementById('fullname').innerHTML='That is true!'
+                    document.getElementById('fullname').style.color='green'
+                }
+            }
+            let passw = document.forms['form']['password'].value
+
+            if(
+                passw == null ||
+                passw == '' ||
+                (passw.search(/<script/i)) >= 0 ||
+                (passw.search(/\s/)) == 0
+            ){
+                document.getElementById('pass').innerHTML='Your pass is inccorect!'
+                document.getElementById('pass').style.color='red'
+                flag++
+            }else{
+                if(
+                    (passw.length <= 6) ||
+                    (passw.search(/[0-9]/) == -1) ||
+                    (passw.search(/[a-z]/) == -1) ||
+                    (passw.search(/[A-Z]/) == -1) ||
+                    (passw.search(/[~!@#$%^&*()_+}{}]/) == -1) 
+                ){
+                    document.getElementById('pass').innerHTML='Your pass is inccorect!'
+                    document.getElementById('pass').style.color='red'
+                    flag++
+                }else{
+                    if(
+                        passw == (document.getElementById('test').value)
+                    )
+                    document.getElementById('pass').innerHTML='Pass is true'
+                    document.getElementById('pass').style.color='green'
+                }
+            }
+            if(flag > 0){
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

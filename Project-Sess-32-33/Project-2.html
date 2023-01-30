@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            
+            height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(90deg, #0d70aa, white);
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* padding: 10px; */
+            
+        }
+
+        .search {
+            height: 50px;
+            position: relative;
+            
+        }
+
+        .search .input {
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            padding: 15px;
+            border: 0;
+            font-size: 20px;
+            transition: width 0.3s ease;
+            /* outline: none; */
+            /* border-radius: 20px; */
+        }
+
+        .btn {
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border: 0;
+            cursor: pointer;
+            font-size: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 0.3s ease;
+            /* border-radius: 20px; */
+        }
+
+        .btn:focus,
+        .input:focus {
+            outline: none;
+        }
+
+        .search.active .input {
+            width: 200px;
+        }
+
+        .search.active .btn {
+            transform: translateX(198px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <input type="text" class="input" placeholder="Search...">
+        <button class="btn">
+            <i>&#128269;</i>
+            <!-- <i class="fa fa-search"></i></button> -->
+        </button>
+    </div>
+    <script>
+        let search = document.querySelector('.search')
+        let btn = document.querySelector('.btn')
+        let input = document.querySelector('.input')
+
+        btn.addEventListener('click', () => {
+            search.classList.toggle('active')
+            input.focus()
+        })
+    </script>
+</body>
+
+</html>
